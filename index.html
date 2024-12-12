@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subrecipient Pre-Award Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #2C3E50;
+        }
+        form {
+            max-width: 800px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-section {
+            margin-top: 30px;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-submit {
+            background-color: #3498DB;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #2980B9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Subrecipient Pre-Award Questionnaire</h1>
+    <form action="/submit" method="post">
+        <div class="form-section">
+            <h2>Grantee Information</h2>
+            <div class="form-group">
+                <label for="legal-name">Legal Name</label>
+                <input type="text" id="legal-name" name="legal-name" required>
+            </div>
+            <div class="form-group">
+                <label for="doing-business-as">Doing Business As Name</label>
+                <input type="text" id="doing-business-as" name="doing-business-as">
+            </div>
+            <div class="form-group">
+                <label for="physical-location">Physical Location</label>
+                <input type="text" id="physical-location" name="physical-location" required>
+            </div>
+            <div class="form-group">
+                <label for="primary-place">Primary Place of Performance</label>
+                <input type="text" id="primary-place" name="primary-place" required>
+            </div>
+            <div class="form-group">
+                <label for="uei">Unique Entity ID (UEI)</label>
+                <input type="text" id="uei" name="uei" required>
+            </div>
+            <div class="form-group">
+                <label for="organization-type">Organization Type</label>
+                <input type="text" id="organization-type" name="organization-type" required>
+            </div>
+            <div class="form-group">
+                <label for="project-director">Project Director Name/Email</label>
+                <input type="text" id="project-director" name="project-director" required>
+            </div>
+            <div class="form-group">
+                <label for="authorized-official">Authorized Official Name/Email</label>
+                <input type="text" id="authorized-official" name="authorized-official" required>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Questionnaire</h2>
+            <div class="form-group">
+                <label for="prior-awards">Has the Grantee received an award or subaward to conduct programs similar to those covered under this proposed subaward agreement in the last two (2) fiscal years? If yes, provide a list of all such awards or subawards.</label>
+                <textarea id="prior-awards" name="prior-awards"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="single-audit">Was the Grantee required to comply with the Single Audit requirements of the Uniform Guidance in the last two (2) fiscal years?</label>
+                <select id="single-audit" name="single-audit">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="audit-findings">If yes, were there any findings or questioned costs? If yes, please explain.</label>
+                <textarea id="audit-findings" name="audit-findings"></textarea>
+            </div>
+            <!-- Additional questions would go here... -->
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+</body>
+</html>
